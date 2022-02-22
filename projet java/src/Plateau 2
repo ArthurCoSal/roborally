@@ -1,0 +1,248 @@
+package fr.um3.miashs.robot;
+
+
+//Utiliser un fichier texte pour récupérer tout. 
+public class Plateau {
+	
+	public static void main (String args[]) {
+		Cases [][]plateau1 = new Cases[14][14];{
+			Spawn s1 = new Spawn(1);
+			plateau1[1][1] = s1;
+			plateau1[12][1] = s1;
+			plateau1[1][12] = s1;
+			plateau1[12][12] = s1;
+			plateau1[7][1] = s1;
+			plateau1[1][6] = s1;
+			plateau1[6][12] = s1;
+			plateau1[12][7] = s1;
+
+		Cases drapeau1 = new Cases(3);
+		plateau1[10][4] = drapeau1;
+		plateau1[5][9] = drapeau1;
+		
+		Cases vide1 = new Cases(4);
+		plateau1[11][7] = vide1;
+		plateau1[11][6] = vide1;
+		plateau1[4][7] = vide1;
+		plateau1[4][6] = vide1;
+		plateau1[9][2] = vide1;
+		plateau1[9][4] = vide1;
+		plateau1[6][9] = vide1;
+		plateau1[6][11] = vide1;
+		
+		TapisRoulant vitesseN1 = new TapisRoulant(6, "Nord");
+		TapisRoulant vitesseS1 = new TapisRoulant(6, "Sud");
+		TapisRoulant vitesseE1 = new TapisRoulant(6, "Est");
+		TapisRoulant vitesseO1 = new TapisRoulant(6, "Ouest");
+		plateau1[10][8] = vitesseN1;
+		plateau1[9][5] = vitesseN1;
+		for (int i = 5; i<8; i++) {
+			plateau1[i][10] = vitesseN1;
+		}
+		plateau1[5][5] = vitesseS1;
+		plateau1[7][8] = vitesseS1;
+		for(int i = 8; i<11; i++) {
+			plateau1[i][3] = vitesseS1;
+
+		}
+		
+		for(int i = 6; i<9 ;i++) {
+			plateau1[9][i] = vitesseO1;
+
+		}
+
+		for(int i = 4; i<6 ;i++) {
+			plateau1[8][i] = vitesseO1;
+
+		}
+
+		for(int i = 5; i<8 ;i++) {
+			plateau1[6][i] = vitesseE1;
+
+		}
+		
+		for(int i = 8; i<10 ;i++) {
+			plateau1[7][i] = vitesseO1;
+
+		}
+		
+		TapisRoulant vitesseN2 = new TapisRoulant(7, "Nord");
+		TapisRoulant vitesseS2 = new TapisRoulant(7, "Sud");
+		TapisRoulant vitesseE2 = new TapisRoulant(7, "Est");
+		TapisRoulant vitesseO2 = new TapisRoulant(7, "Ouest");
+		
+		for(int i = 9; i<12 ;i++) {
+			plateau1[i][11] = vitesseN2;
+
+		}
+		
+		plateau1[12][10] = vitesseN2;
+		
+		for(int i = 3; i<5 ;i++) {
+			plateau1[i][3] = vitesseS2;
+
+		}
+		
+		for(int i = 5; i<7 ;i++) {
+			plateau1[i][2] = vitesseO1;
+
+		}
+		
+		plateau1[4][3] = vitesseO2;
+		plateau1[11][10] = vitesseE2;
+		
+		
+		Mur murN1 = new Mur(1, "Nord");
+		Mur murO1= new Mur(1, "Ouest");
+		Mur murS1 = new Mur(1, "Sud");
+		Mur murE1 = new Mur(1, "Est");
+		
+		plateau1[1][2] = murN1;
+		plateau1[1][3] = murN1;
+		plateau1[1][5] = murN1;
+		plateau1[1][7] = murN1;
+		plateau1[1][11] = murN1;
+		plateau1[5][9] = murN1;
+		plateau1[1][2] = murN1;
+		plateau1[12][4] = murN1;
+		plateau1[3][1] = murO1;
+		plateau1[7][1] = murO1;
+		plateau1[9][1] = murO1;
+		plateau1[12][1] = murO1;
+		plateau1[8][6] = murO1;
+		plateau1[3][9] = murO1;
+		plateau1[9][8] = murO1;
+		plateau1[13][2] = murS1;
+		plateau1[13][6] = murS1;
+		plateau1[13][8] = murS1;
+		plateau1[13][10] = murS1;
+		plateau1[13][11] = murS1;
+		plateau1[3][9] = murS1;
+		plateau1[5][7] = murS1;
+		plateau1[5][8] = murS1;
+		plateau1[9][5] = murS1;
+		plateau1[9][6] = murS1;
+		plateau1[10][4] = murS1;
+		plateau1[11][4] = murS1;
+		plateau1[7][7] = murE1;
+		plateau1[3][12] = murE1;
+		plateau1[7][12] = murE1;
+		plateau1[6][12] = murE1;
+		plateau1[8][12] = murE1;
+		plateau1[12][12] = murE1;
+
+		for (int i = 0 ; i<14; i++){
+			Cases vide_map = new Cases(5);
+			plateau1[0][i] = vide_map;
+			plateau1[i][0] = vide_map;
+			plateau1[13][i] = vide_map;
+			plateau1[i][13] = vide_map;
+			}
+			
+		Cases normal = new Cases(1);
+		for (int i = 0; i < 14; i++) {
+			for(int j = 0; i < 14; i++) {
+				if(plateau1[i][j].equals(null)) {
+					plateau1[i][j] = normal;
+				}
+			}
+		}
+			
+				
+			
+		}
+		
+		Cases[][] plateau2 = new Cases[14][14]; {
+			Spawn s2 = new Spawn(1);
+			plateau2[1][1] = s2;
+			plateau2[12][1] = s2;
+			plateau2[1][12] = s2;
+			plateau2[12][12] = s2;
+			plateau2[7][1] = s2;
+			plateau2[1][6] = s2;
+			plateau2[6][12] = s2;
+			plateau2[12][7] = s2;
+			
+			Cases drapeau2 = new Cases(3);
+			plateau2[4][6] = drapeau2;
+			plateau2[9][7] = drapeau2;
+			
+			Cases vide2 = new Cases(4);
+			for(int i = 3; i<6; i++) {
+				plateau2[i][5] = vide2;
+			}
+			
+			for(int i = 8; i<11; i++) {
+				plateau2[i][8] = vide2;
+			}
+			
+			plateau2[9][3] = vide2;
+			plateau2[10][4] = vide2;
+			plateau2[10][3] = vide2;
+			plateau2[3][9] = vide2;
+			plateau2[3][10] = vide2;
+			plateau2[4][10] = vide2;
+			
+			TapisRoulant vitesse2N1 = new TapisRoulant(6, "Nord"); 
+			TapisRoulant vitesse2E1 = new TapisRoulant(6, "Est"); 
+			
+			for(int i = 2; i<8; i++) {
+				plateau2[i][8] = vitesse2N1;
+			}
+			
+			for(int i = 8; i<12; i++) {
+				plateau2[i][5] = vitesse2N1;
+			}
+			
+			for(int i = 5; i<9; i++) {
+				plateau2[7][i] = vitesse2E1;
+			}
+			
+			TapisRoulant vitesse2N2 = new TapisRoulant(7,"Nord");
+			TapisRoulant vitesse2E2 = new TapisRoulant(7,"Est");
+			TapisRoulant vitesse2S2 = new TapisRoulant(7,"Sud");
+			TapisRoulant vitesse2O2 = new TapisRoulant(7,"Ouest");
+			
+			for(int i = 2; i<4; i++) {
+				plateau2[i][2] = vitesse2S2;
+			}
+			
+			for(int i = 10; i<12; i++) {
+				plateau2[i][11] = vitesse2N2;
+			}
+			
+			plateau2[9][10] = vitesse2N2;
+			plateau2[4][3] = vitesse2S2;
+			plateau2[8][10] = vitesse2O2;
+			plateau2[8][9] = vitesse2O2;
+			plateau2[9][11] = vitesse2O2;
+			plateau2[5][3] = vitesse2E2;
+			plateau2[5][4] = vitesse2E2;
+			plateau2[4][2] = vitesse2E2;
+			
+			Mur murN2 = new Mur(1, "Nord");
+			Mur murE2 = new Mur(1, "Est");
+			Mur murS2 = new Mur(1, "Sud");
+			Mur murO2 = new Mur(1, "Ouest");
+
+			plateau2[1][3] = murN2;
+			plateau2[1][8] = murN2;
+			plateau2[1][11] = murN2;
+			plateau2[6][10] = murN2;
+			plateau2[4][6] = murN2;
+			plateau2[3][1] = murE2;
+			plateau2[9][1] = murE2;
+			plateau2[10][1] = murE2;
+			plateau2[7][3] = murE2;
+			plateau2[9][7] = murE2;
+			plateau2[12][2] = murS2;
+			plateau2[12][5] = murS2;
+			plateau2[12][10] = murS2;
+			plateau2[12][3] = murS2;
+			plateau2[9][7] = murS2;
+			plateau2[7][3] = murS2;
+			plateau2[3][12] = murO2;
+			plateau2[4][12] = murO2;
+			plateau2[10][12] = murO2;
+			plateau2[6][10] = murO2;
+			plateau2[4][6] = murO2;
